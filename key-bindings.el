@@ -1,14 +1,14 @@
-;;; init-flycheck.el --- basic initialisation for flycheck
+;;; key-bindings.el --- general key binding definitions.
 
-;; Filename: init-flycheck.el
-;; Description: basic initialisation for flycheck
+;; Filename: key-bindings.el
+;; Description: general key binding definitions.
 ;; Author: Philipp Spliethoff <philipp.spliethoff@tu-dortmund.de>
-;; Created: 2014-03-02 15:07:58
+;; Created: 2014-03-02 14:09:00
 ;; Version: 0.1
-;; Last-Updated: 2014-03-02 15:07:58
+;; Last-Updated: 2014-03-02 14:09:00
 ;;           By: Philipp Spliethoff
-;; URL: https://github.com/endoplasma/.emacs.d/el-get-init-files/init-flycheck.el
-;; Keywords: fylcheck
+;; URL: https://github.com/endoplasma/.emacs.d/key-bindings.el
+;; Keywords: key-bindings, emacs
 ;; Compatibility: GNU Emacs 24.3.1
 ;;
 
@@ -31,14 +31,15 @@
 ;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth
 ;; Floor, Boston, MA 02110-1301, USA.
 
-;;; Commentary:
-;; 
-;; basic initialisation for flycheck
-;; this file confiugres flycheck
-;; currently only the global mode gets enabled
+;; Commentary: 
+;;
+;; general key binding definitions.
+;;
 
 ;;; Code:
 
-(global-flycheck-mode t)
+(global-set-key (kbd "C-c C-r") 'comment-or-uncomment-region-or-line)
 
-;;; init-flycheck.el ends here
+
+;;; key-bindings.el ends here
+

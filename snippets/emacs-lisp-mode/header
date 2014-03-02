@@ -1,15 +1,17 @@
-;;; init-flycheck.el --- basic initialisation for flycheck
+;;; ${1:`(file-name-nondirectory buffer-file-name)`) --- ${2:Simple description}
 
-;; Filename: init-flycheck.el
-;; Description: basic initialisation for flycheck
-;; Author: Philipp Spliethoff <philipp.spliethoff@tu-dortmund.de>
-;; Created: 2014-03-02 15:07:58
+;; Filename: $1
+;; Description: $2
+;; Author: `user-full-name` <`user-mail-address`>
+;; Maintainer: `user-full-name` <`user-mail-address`>
+;; Copyright (C) `(format-time-string "%Y")`, `user-full-name`, all rights reserved.
+;; Created: `(format-time-string "%Y-%m-%d %T")`
 ;; Version: 0.1
-;; Last-Updated: 2014-03-02 15:07:58
-;;           By: Philipp Spliethoff
-;; URL: https://github.com/endoplasma/.emacs.d/el-get-init-files/init-flycheck.el
-;; Keywords: fylcheck
-;; Compatibility: GNU Emacs 24.3.1
+;; Last-Updated: `(format-time-string "%Y-%m-%d %T")`
+;;           By: `user-full-name`
+;; URL: https://github.com/endoplasma/${8:.emacs.d}/$1
+;; Keywords: $3
+;; Compatibility: `(substring (emacs-version) 0 (string-match " (" (emacs-version))))`
 ;;
 
 ;;; This file is NOT part of GNU Emacs
@@ -31,14 +33,26 @@
 ;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth
 ;; Floor, Boston, MA 02110-1301, USA.
 
-;;; Commentary:
+;;; Commentary: 
 ;; 
-;; basic initialisation for flycheck
-;; this file confiugres flycheck
-;; currently only the global mode gets enabled
+;; $2
+;; $5
+
+;;; Change log:
+;;	
+;; `(format-time-string "%Y/%m/%d")`
+;;      * First released.
+;; 
+
+;;; TODO
+;;
+;; $9
+;;
 
 ;;; Code:
 
-(global-flycheck-mode t)
+$0
 
-;;; init-flycheck.el ends here
+(provide '$1)
+
+;;; $1 ends here

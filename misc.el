@@ -13,3 +13,8 @@
 	    (auto-fill-mode 1)
 	    (if (eq window-system 'x)
 		(font-lock-mode 1))))
+
+;; ##################### autoload hooks ####################
+
+(add-hook 'c-mode-common-hook
+       (lambda() (my-set-monospaced-font)))

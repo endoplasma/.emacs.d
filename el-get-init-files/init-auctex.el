@@ -29,3 +29,6 @@
 ;; Reftex einflechten und laden
 (setq reftex-plug-into-AUCTeX t)
 (add-hook 'latex-mode-hook 'turn-on-reftex)
+
+(setq LaTeX-csquotes-close-quote "}")
+(setq LaTeX-csquotes-open-quote "\\enquote{")
