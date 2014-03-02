@@ -1,4 +1,4 @@
-;;; package --- Basic Configuration for Emacs
+;;; init.el --- Basic Configuration for Emacs
 ;;; Commentary:
 ;;; Code:
 ;; initialise el-get
