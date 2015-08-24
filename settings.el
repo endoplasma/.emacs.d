@@ -43,8 +43,8 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; Font settings
-;; (set-face-attribute 'default nil :family "Anonymous Pro" :height 110)
-(set-face-attribute 'default nil :family "Anonymous Pro" :height 100)
+(set-face-attribute 'default nil :family "Anonymous Pro" :height 110)
+;;(set-face-attribute 'default nil :family "Anonymous Pro" :height 100)
 ;;(set-face-attribute 'default nil :family "Inconsolata" :height 110)
 ;;(set-default-font "Inconsolata-11")
 
@@ -66,6 +66,20 @@
 (setq user-full-name "Philipp Spliethoff")
 (setq user-mail-address "philipp.spliethoff@tu-dortmund.de")
 
+;; Email settings for use with mutt
+;; Yes, you can do this same trick with the cool "It's All Text" firefox add-on :-)
+(add-to-list 'auto-mode-alist '("/mutt-\\|itsalltext.*mail\\.google" . mail-mode))
+(add-hook 'mail-mode-hook 'turn-on-auto-fill)
+(add-hook
+ 'mail-mode-hook
+ (lambda ()
+   (define-key mail-mode-map [(control c) (control c)]
+     (lambda ()
+       (interactive)
+       (save-buffer)
+       (server-edit)))))
+
+
 ;; Backup
 ; backup settings
 (defvar autosave-dir "~/.emacs.d/backups/")
@@ -83,6 +97,9 @@
 
 (show-paren-mode 1)
 (setq show-paren-delay 0)
+
+(add-hook 'c-mode-hook (lambda () (setq comment-start "//"
+                                        comment-end   "")))
 
 (provide 'settings)
 

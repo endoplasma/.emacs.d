@@ -6,12 +6,13 @@
 (setq-default TeX-master nil)
 
 ;; flyspell in auctex
-(add-hook `latex-mode-hook `flyspell-mode)
-(add-hook `latex-mode-hook `flyspell-buffer)
-(add-hook `tex-mode-hook `flyspell-mode)
-(add-hook `tex-mode-hook `flyspell-buffer)
-(add-hook `bibtex-mode-hook `flyspell-mode)
-(add-hook `bibtex-mode-hook `flyspell-buffer)
+
+(add-hook `latex-mode-hook `(flyspell-mode t))
+(add-hook `latex-mode-hook `(flyspell-buffer t))
+(add-hook `tex-mode-hook `(flyspell-mode t))
+(add-hook `tex-mode-hook `(flyspell-buffer t))
+(add-hook `bibtex-mode-hook `(flyspell-mode t))
+(add-hook `bibtex-mode-hook `(flyspell-buffer t))
 (setq TeX-PDF-mode t)
 
 ;; #### Outline mode - to hide sections etc. ####

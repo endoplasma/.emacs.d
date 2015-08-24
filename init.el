@@ -33,9 +33,9 @@
 ;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth
 ;; Floor, Boston, MA 02110-1301, USA.
 
-;;; Commentary: 
+;;; Commentary:
 ;; 
-;; Emacs initialisation File 
+;; Emacs initialisation File
 ;;
 ;;This file handles the basci initialisation of emacs.  The initialisation
 ;; process is split up into multiple files, which are called from this script.
@@ -73,7 +73,8 @@
 
 (setq my-el-get-packages
       (append 
-       '(auctex
+       '(cedet
+	 auctex
 	 switch-window
 	 auto-complete
 	 color-theme-zenburn
@@ -85,6 +86,11 @@
 	 helm
 	 flycheck
 	 magit
+	 markdown-mode
+	 cmake-mode
+	 ggtags
+	 projectile-speedbar
+	 doxymacs
 	 )))
 
 ;; install new packages and init already installed packages
@@ -97,6 +103,144 @@
 (load "~/.emacs.d/misc.el")
 (load "~/.emacs.d/functions.el")
 (load "~/.emacs.d/key-bindings.el")
+(load "~/.emacs.d/cedet_ecb_config.el")
+
+
+;; (ede-cpp-root-project "WICCAD"
+;; 	 :file "~/Workspace/wiccad/Projects/Backbone_F407/Makefile"
+;;          :include-path '("/inc"
+;; 			 "/inc/http"
+;; 			 "/inc/usb"
+;; 			 "/inc/transceiver"
+;; 			 "/inc/spielwiese1"
+;; 			 "/inc/spielwiese2"
+;; 			 "/libs"
+;; 			 "/libs/CMSIS/Device/ST/STM32F4xx/Include"
+;; 			 "/libs/CMSIS/Include"
+;; 			 "/libs/fatfs"
+;; 			 "/libs/STM32F4xx_HAL_Driver/Inc"
+;; 			 "/libs/STM32F4xx_HAL_Driver/Src"
+;; 			 "/libs/STM32_USB_Device_Library/Core/Src"
+;; 			 "/libs/STM32_USB_Device_Library/Core/Inc"
+;; 			 )
+;; 	 :spp-table '(("isUnix" . ""))
+;; 	 :compile-command "cd ~/Workspace/wiccad/Projects/Backbone_F407/  && make -j2 PLATFORM=linux"
+;; 	 )
+
+(ede-cpp-root-project "wiccad-david"
+                :name "Wiccad Backbone release"
+                :file "~/Workspace/wiccad/david/Backbone_F407/Makefile"
+                :include-path '("/"
+                                "/src"
+				"/src/basestation/"
+				"/src/basestation_proto/"
+				"/src/device_proto/"
+				"/src/mixer/"
+				"/src/mp3/"
+				"/src/network/"
+				"/src/protoConfig/"
+				"/src/protokoll/"
+				"/src/sd_lcd/"
+				"/src/spielwiese1/"
+				"/src/spielwiese3/"
+				"/src/transceiver/"
+				"/src/usb/"
+                                "/inc"
+				"/inc/basestation/"
+				"/inc/basestation_proto/"
+				"/inc/device_proto/"
+				"/inc/mixer/"
+				"/inc/mp3/"
+				"/inc/network/"
+				"/inc/protoConfig/"
+				"/inc/protokoll/"
+				"/inc/sd_lcd/"
+				"/inc/spielwiese1/"
+				"/inc/spielwiese3/"
+				"/inc/transceiver/"
+				"/inc/usb/"
+                                "/libs"
+				"/libs/CMSIS/Device/ST/STM32F4xx/Include"
+				"/libs/CMSIS/Include"
+				"/libs/fatfs"
+				"/libs/STM32F4xx_HAL_Driver/Inc"
+				"/libs/STM32F4xx_HAL_Driver/Src"
+				"/libs/STM32_USB_Device_Library/Core/Src"
+				"/libs/STM32_USB_Device_Library/Core/Inc"
+                               )
+                :spp-table '(("isUnix" . ""))
+		:compile-command "cd ~/Workspace/wiccad/david/Backbone_F407/  && make -f Makefile.linux -j2 PLATFORM=linux BUILDCONFIG=1"
+		)
+
+(ede-cpp-root-project "wiccad-testbench"
+                :name "Wiccad testbench"
+                :file "~/Workspace/wiccad/Projects/TestBench/Makefile"
+                :include-path '("/"
+                                "/src"
+				"/src/basestation/"
+				"/src/basestation_proto/"
+				"/src/device_proto/"
+				"/src/mixer/"
+				"/src/mp3/"
+				"/src/network/"
+				"/src/protoConfig/"
+				"/src/protokoll/"
+				"/src/sd_lcd/"
+				"/src/spielwiese1/"
+				"/src/spielwiese3/"
+				"/src/transceiver/"
+				"/src/usb/"
+                                "/inc"
+				"/inc/basestation/"
+				"/inc/basestation_proto/"
+				"/inc/device_proto/"
+				"/inc/mixer/"
+				"/inc/mp3/"
+				"/inc/network/"
+				"/inc/protoConfig/"
+				"/inc/protokoll/"
+				"/inc/sd_lcd/"
+				"/inc/spielwiese1/"
+				"/inc/spielwiese3/"
+				"/inc/transceiver/"
+				"/inc/usb/"
+                                "/libs"
+				"/libs/CMSIS/Device/ST/STM32F4xx/Include"
+				"/libs/CMSIS/Include"
+				"/libs/fatfs"
+				"/libs/STM32F4xx_HAL_Driver/Inc"
+				"/libs/STM32F4xx_HAL_Driver/Src"
+				"/libs/STM32_USB_Device_Library/Core/Src"
+				"/libs/STM32_USB_Device_Library/Core/Inc"
+                               )
+                :spp-table '(("isUnix" . ""))
+		:compile-command "cd ~/Workspace/wiccad/Projects/TestBench/  && make -f Makefile.linux -j2 PLATFORM=linux BUILDCONFIG=1"
+		)
+
+(ede-cpp-root-project "wiccad-MP3"
+		      :name "Wiccad MP3 Player"
+		      :file "~/Workspace/wiccad/david/MP3_F407/Makefile"
+		      :include-path '("/"
+				      "/libs"
+				      "/libs/CMSIS"
+				      "/libs/CMSIS/Include"
+				      "/libs/CMSIS/Device"
+				      "/libs/CMSIS/Device/ST"
+				      "/libs/CMSIS/Device/ST/STM32F4xx"
+				      "/libs/CMSIS/Device/ST/STM32F4xx/Include"
+				      "/libs/helix"
+				      "/libs/helix/pub"
+				      "/libs/helix/real"
+				      "/libs/STM32F4xx_StdPeriph_Driver"
+				      "/libs/STM32F4xx_StdPeriph_Driver/src"
+				      "/libs/STM32F4xx_StdPeriph_Driver/inc"
+				      "/out"
+				      "/src"
+				      "/incrojects"
+				      )
+		      :spp-table '(("isUnix" . ""))
+		      :compile-command "cd ~/Workspace/wiccad/david/MP3_F407/  && make -f Makefile.linux -j2 PLATFORM=linux BUILDCONFIG=1"
+		      )
 
 
 ;;(load "~/.emacs.d/custom.el")
@@ -105,9 +249,19 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("471877df61bcd989ba4c0a5097654684fcfe918e124d46f811b533e44df34f53" default)))
+ '(TeX-engine (quote luatex))
+ '(custom-safe-themes
+   (quote
+    ("471877df61bcd989ba4c0a5097654684fcfe918e124d46f811b533e44df34f53" default)))
+ '(ecb-eshell-auto-activate t)
+ '(ecb-eshell-buffer-sync nil)
  '(ecb-options-version "2.40")
- '(safe-local-variable-values (quote ((require-final-newline)))))
+ '(ecb-source-path nil)
+ '(safe-local-variable-values
+   (quote
+    ((eval flyspell-buffer)
+     (eval ispell-change-dictionary "en_GB")
+     (require-final-newline)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -118,5 +272,4 @@
 (provide 'init.el)
 
 ;;; init.el ends here
-
-
+(put 'upcase-region 'disabled nil)

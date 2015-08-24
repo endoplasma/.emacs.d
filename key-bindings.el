@@ -40,6 +40,12 @@
 
 (global-set-key (kbd "C-c C-r") 'comment-or-uncomment-region-or-line)
 
+;; C-c C-r gets overwritten by ecb
+(global-set-key (kbd "C-c C-t") 'comment-or-uncomment-region-or-line)
+
+(global-set-key (kbd "C-x C-k") 'kill-this-buffer)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "M-<f2>") 'nv-speedbar-open-current-buffer-in-tree)
 
 ;;; key-bindings.el ends here
 

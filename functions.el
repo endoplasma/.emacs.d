@@ -52,7 +52,6 @@ region\) apply comment-or-uncomment to the current line"
         (comment-or-uncomment-region (point) (mark))
       (comment-or-uncomment-region (mark) (point)))))
 
-
 (defun my-set-monospaced-font ()
   "Set a monospaced font, for modes with programming languages"
   (interactive)
@@ -63,8 +62,10 @@ region\) apply comment-or-uncomment to the current line"
 (defun my-set-normal-font ()
   "Set a non-monospaced font, for modes with normal text"
   (interactive)
-  (setq buffer-face-mode-face '(:family "Anonymous Pro" :height 100))
+  (setq buffer-face-mode-face '(:family "Anonymous Pro" :height 110))
   (buffer-face-mode)
   )
+
+(add-hook 'c-mode-hook 'my-set-monospaced-font)
 
 ;;; functions.el ends here

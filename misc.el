@@ -15,6 +15,11 @@
 		(font-lock-mode 1))))
 
 ;; ##################### autoload hooks ####################
-
+;; my-set-monospaced-font is defined in 
 (add-hook 'c-mode-common-hook
        (lambda() (my-set-monospaced-font)))
+
+
+;; ##################### coding styles ######################
+
+
