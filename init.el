@@ -91,6 +91,7 @@
 	 ggtags
 	 projectile-speedbar
 	 doxymacs
+	 matlab-mode
 	 )))
 
 ;; install new packages and init already installed packages
@@ -240,6 +241,14 @@
 				      )
 		      :spp-table '(("isUnix" . ""))
 		      :compile-command "cd ~/Workspace/wiccad/david/MP3_F407/  && make -f Makefile.linux -j2 PLATFORM=linux BUILDCONFIG=1"
+		      )
+
+(ede-cpp-root-project "MA_sim"
+		      :name "Matlab Simulation for MA"
+		      :file "~/Documents/Uni/MA/MA_git/matlab/sim/README"
+		      :include-path '("/"
+				      )
+		      :spp-table '(("isUnix" . ""))
 		      )
 
 

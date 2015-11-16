@@ -1,0 +1,11 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: inc_image
+# key: \im
+# --
+
+   #+CAPTION: $1
+   #+NAME:   fig:$2
+   #+ATTR_LATEX: width=\textwidth
+   [[./$3]]
+   
+   $0

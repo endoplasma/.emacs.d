@@ -18,8 +18,8 @@
       )
 
 (setq org-agenda-files (list
-			(quote "~/GTD/gtd.org") 
-;;			(quote "~/org/todo.org") 
+;;			(quote "~/GTD/gtd.org") 
+			(quote "~/org/todo.org") 
 ;;			(quote "~/org/postbote.org")
 ;;			(quote "~/org/import.org")
 			))

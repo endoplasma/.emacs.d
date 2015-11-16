@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : overrightarrow
+#key : \ora
+# --
+\overrightarrow{$0}
