@@ -72,12 +72,13 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 
 (setq my-el-get-packages
-      (append 
-       '(cedet
+      (append
+       '(el-get
 	 auctex
 	 switch-window
 	 auto-complete
 	 color-theme-zenburn
+	 cedet
 	 smartparens
 	 org-mode
 	 vhdl-mode
@@ -89,7 +90,7 @@
 	 markdown-mode
 	 cmake-mode
 	 ggtags
-	 projectile-speedbar
+;	 projectile-speedbar
 	 doxymacs
 	 matlab-mode
 	 )))
@@ -104,7 +105,7 @@
 (load "~/.emacs.d/misc.el")
 (load "~/.emacs.d/functions.el")
 (load "~/.emacs.d/key-bindings.el")
-(load "~/.emacs.d/cedet_ecb_config.el")
+;;(load "~/.emacs.d/cedet_ecb_config.el")
 
 
 ;; (ede-cpp-root-project "WICCAD"
@@ -128,128 +129,128 @@
 ;; 	 :compile-command "cd ~/Workspace/wiccad/Projects/Backbone_F407/  && make -j2 PLATFORM=linux"
 ;; 	 )
 
-(ede-cpp-root-project "wiccad-david"
-                :name "Wiccad Backbone release"
-                :file "~/Workspace/wiccad/david/Backbone_F407/Makefile"
-                :include-path '("/"
-                                "/src"
-				"/src/basestation/"
-				"/src/basestation_proto/"
-				"/src/device_proto/"
-				"/src/mixer/"
-				"/src/mp3/"
-				"/src/network/"
-				"/src/protoConfig/"
-				"/src/protokoll/"
-				"/src/sd_lcd/"
-				"/src/spielwiese1/"
-				"/src/spielwiese3/"
-				"/src/transceiver/"
-				"/src/usb/"
-                                "/inc"
-				"/inc/basestation/"
-				"/inc/basestation_proto/"
-				"/inc/device_proto/"
-				"/inc/mixer/"
-				"/inc/mp3/"
-				"/inc/network/"
-				"/inc/protoConfig/"
-				"/inc/protokoll/"
-				"/inc/sd_lcd/"
-				"/inc/spielwiese1/"
-				"/inc/spielwiese3/"
-				"/inc/transceiver/"
-				"/inc/usb/"
-                                "/libs"
-				"/libs/CMSIS/Device/ST/STM32F4xx/Include"
-				"/libs/CMSIS/Include"
-				"/libs/fatfs"
-				"/libs/STM32F4xx_HAL_Driver/Inc"
-				"/libs/STM32F4xx_HAL_Driver/Src"
-				"/libs/STM32_USB_Device_Library/Core/Src"
-				"/libs/STM32_USB_Device_Library/Core/Inc"
-                               )
-                :spp-table '(("isUnix" . ""))
-		:compile-command "cd ~/Workspace/wiccad/david/Backbone_F407/  && make -f Makefile.linux -j2 PLATFORM=linux BUILDCONFIG=1"
-		)
+;; (ede-cpp-root-project "wiccad-david"
+;;                 :name "Wiccad Backbone release"
+;;                 :file "~/Workspace/wiccad/david/Backbone_F407/Makefile"
+;;                 :include-path '("/"
+;;                                 "/src"
+;; 				"/src/basestation/"
+;; 				"/src/basestation_proto/"
+;; 				"/src/device_proto/"
+;; 				"/src/mixer/"
+;; 				"/src/mp3/"
+;; 				"/src/network/"
+;; 				"/src/protoConfig/"
+;; 				"/src/protokoll/"
+;; 				"/src/sd_lcd/"
+;; 				"/src/spielwiese1/"
+;; 				"/src/spielwiese3/"
+;; 				"/src/transceiver/"
+;; 				"/src/usb/"
+;;                                 "/inc"
+;; 				"/inc/basestation/"
+;; 				"/inc/basestation_proto/"
+;; 				"/inc/device_proto/"
+;; 				"/inc/mixer/"
+;; 				"/inc/mp3/"
+;; 				"/inc/network/"
+;; 				"/inc/protoConfig/"
+;; 				"/inc/protokoll/"
+;; 				"/inc/sd_lcd/"
+;; 				"/inc/spielwiese1/"
+;; 				"/inc/spielwiese3/"
+;; 				"/inc/transceiver/"
+;; 				"/inc/usb/"
+;;                                 "/libs"
+;; 				"/libs/CMSIS/Device/ST/STM32F4xx/Include"
+;; 				"/libs/CMSIS/Include"
+;; 				"/libs/fatfs"
+;; 				"/libs/STM32F4xx_HAL_Driver/Inc"
+;; 				"/libs/STM32F4xx_HAL_Driver/Src"
+;; 				"/libs/STM32_USB_Device_Library/Core/Src"
+;; 				"/libs/STM32_USB_Device_Library/Core/Inc"
+;;                                )
+;;                 :spp-table '(("isUnix" . ""))
+;; 		:compile-command "cd ~/Workspace/wiccad/david/Backbone_F407/  && make -f Makefile.linux -j2 PLATFORM=linux BUILDCONFIG=1"
+;; 		)
 
-(ede-cpp-root-project "wiccad-testbench"
-                :name "Wiccad testbench"
-                :file "~/Workspace/wiccad/Projects/TestBench/Makefile"
-                :include-path '("/"
-                                "/src"
-				"/src/basestation/"
-				"/src/basestation_proto/"
-				"/src/device_proto/"
-				"/src/mixer/"
-				"/src/mp3/"
-				"/src/network/"
-				"/src/protoConfig/"
-				"/src/protokoll/"
-				"/src/sd_lcd/"
-				"/src/spielwiese1/"
-				"/src/spielwiese3/"
-				"/src/transceiver/"
-				"/src/usb/"
-                                "/inc"
-				"/inc/basestation/"
-				"/inc/basestation_proto/"
-				"/inc/device_proto/"
-				"/inc/mixer/"
-				"/inc/mp3/"
-				"/inc/network/"
-				"/inc/protoConfig/"
-				"/inc/protokoll/"
-				"/inc/sd_lcd/"
-				"/inc/spielwiese1/"
-				"/inc/spielwiese3/"
-				"/inc/transceiver/"
-				"/inc/usb/"
-                                "/libs"
-				"/libs/CMSIS/Device/ST/STM32F4xx/Include"
-				"/libs/CMSIS/Include"
-				"/libs/fatfs"
-				"/libs/STM32F4xx_HAL_Driver/Inc"
-				"/libs/STM32F4xx_HAL_Driver/Src"
-				"/libs/STM32_USB_Device_Library/Core/Src"
-				"/libs/STM32_USB_Device_Library/Core/Inc"
-                               )
-                :spp-table '(("isUnix" . ""))
-		:compile-command "cd ~/Workspace/wiccad/Projects/TestBench/  && make -f Makefile.linux -j2 PLATFORM=linux BUILDCONFIG=1"
-		)
+;; (ede-cpp-root-project "wiccad-testbench"
+;;                 :name "Wiccad testbench"
+;;                 :file "~/Workspace/wiccad/Projects/TestBench/Makefile"
+;;                 :include-path '("/"
+;;                                 "/src"
+;; 				"/src/basestation/"
+;; 				"/src/basestation_proto/"
+;; 				"/src/device_proto/"
+;; 				"/src/mixer/"
+;; 				"/src/mp3/"
+;; 				"/src/network/"
+;; 				"/src/protoConfig/"
+;; 				"/src/protokoll/"
+;; 				"/src/sd_lcd/"
+;; 				"/src/spielwiese1/"
+;; 				"/src/spielwiese3/"
+;; 				"/src/transceiver/"
+;; 				"/src/usb/"
+;;                                 "/inc"
+;; 				"/inc/basestation/"
+;; 				"/inc/basestation_proto/"
+;; 				"/inc/device_proto/"
+;; 				"/inc/mixer/"
+;; 				"/inc/mp3/"
+;; 				"/inc/network/"
+;; 				"/inc/protoConfig/"
+;; 				"/inc/protokoll/"
+;; 				"/inc/sd_lcd/"
+;; 				"/inc/spielwiese1/"
+;; 				"/inc/spielwiese3/"
+;; 				"/inc/transceiver/"
+;; 				"/inc/usb/"
+;;                                 "/libs"
+;; 				"/libs/CMSIS/Device/ST/STM32F4xx/Include"
+;; 				"/libs/CMSIS/Include"
+;; 				"/libs/fatfs"
+;; 				"/libs/STM32F4xx_HAL_Driver/Inc"
+;; 				"/libs/STM32F4xx_HAL_Driver/Src"
+;; 				"/libs/STM32_USB_Device_Library/Core/Src"
+;; 				"/libs/STM32_USB_Device_Library/Core/Inc"
+;;                                )
+;;                 :spp-table '(("isUnix" . ""))
+;; 		:compile-command "cd ~/Workspace/wiccad/Projects/TestBench/  && make -f Makefile.linux -j2 PLATFORM=linux BUILDCONFIG=1"
+;; 		)
 
-(ede-cpp-root-project "wiccad-MP3"
-		      :name "Wiccad MP3 Player"
-		      :file "~/Workspace/wiccad/david/MP3_F407/Makefile"
-		      :include-path '("/"
-				      "/libs"
-				      "/libs/CMSIS"
-				      "/libs/CMSIS/Include"
-				      "/libs/CMSIS/Device"
-				      "/libs/CMSIS/Device/ST"
-				      "/libs/CMSIS/Device/ST/STM32F4xx"
-				      "/libs/CMSIS/Device/ST/STM32F4xx/Include"
-				      "/libs/helix"
-				      "/libs/helix/pub"
-				      "/libs/helix/real"
-				      "/libs/STM32F4xx_StdPeriph_Driver"
-				      "/libs/STM32F4xx_StdPeriph_Driver/src"
-				      "/libs/STM32F4xx_StdPeriph_Driver/inc"
-				      "/out"
-				      "/src"
-				      "/incrojects"
-				      )
-		      :spp-table '(("isUnix" . ""))
-		      :compile-command "cd ~/Workspace/wiccad/david/MP3_F407/  && make -f Makefile.linux -j2 PLATFORM=linux BUILDCONFIG=1"
-		      )
+;; (ede-cpp-root-project "wiccad-MP3"
+;; 		      :name "Wiccad MP3 Player"
+;; 		      :file "~/Workspace/wiccad/david/MP3_F407/Makefile"
+;; 		      :include-path '("/"
+;; 				      "/libs"
+;; 				      "/libs/CMSIS"
+;; 				      "/libs/CMSIS/Include"
+;; 				      "/libs/CMSIS/Device"
+;; 				      "/libs/CMSIS/Device/ST"
+;; 				      "/libs/CMSIS/Device/ST/STM32F4xx"
+;; 				      "/libs/CMSIS/Device/ST/STM32F4xx/Include"
+;; 				      "/libs/helix"
+;; 				      "/libs/helix/pub"
+;; 				      "/libs/helix/real"
+;; 				      "/libs/STM32F4xx_StdPeriph_Driver"
+;; 				      "/libs/STM32F4xx_StdPeriph_Driver/src"
+;; 				      "/libs/STM32F4xx_StdPeriph_Driver/inc"
+;; 				      "/out"
+;; 				      "/src"
+;; 				      "/incrojects"
+;; 				      )
+;; 		      :spp-table '(("isUnix" . ""))
+;; 		      :compile-command "cd ~/Workspace/wiccad/david/MP3_F407/  && make -f Makefile.linux -j2 PLATFORM=linux BUILDCONFIG=1"
+;; 		      )
 
-(ede-cpp-root-project "MA_sim"
-		      :name "Matlab Simulation for MA"
-		      :file "~/Documents/Uni/MA/MA_git/matlab/sim/README"
-		      :include-path '("/"
-				      )
-		      :spp-table '(("isUnix" . ""))
-		      )
+;; (ede-cpp-root-project "MA_sim"
+;; 		      :name "Matlab Simulation for MA"
+;; 		      :file "~/Documents/Uni/MA/MA_git/matlab/sim/README"
+;; 		      :include-path '("/"
+;; 				      )
+;; 		      :spp-table '(("isUnix" . ""))
+;; 		      )
 
 
 ;;(load "~/.emacs.d/custom.el")
@@ -278,7 +279,9 @@
  ;; If there is more than one, they won't work right.
  )
 
+(put 'upcase-region 'disabled nil)
+
+
 (provide 'init.el)
 
 ;;; init.el ends here
-(put 'upcase-region 'disabled nil)

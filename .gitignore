@@ -5,3 +5,7 @@ abbrev_defs
 ac-comphist.dat
 bookmarks
 el-get
+**.elc
+el-get-init-files/*.elc
+/elpa/*
+srecode-map.el
