@@ -5,7 +5,17 @@ abbrev_defs
 ac-comphist.dat
 bookmarks
 el-get
+<<<<<<< Updated upstream
 **.elc
 el-get-init-files/*.elc
 /elpa/*
 srecode-map.el
+=======
+.org-id-locations
+eshell/*
+init.el.*
+semanticdb/*
+tramp
+url/*
+
+>>>>>>> Stashed changes

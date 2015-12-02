@@ -101,6 +101,12 @@
 (add-hook 'c-mode-hook (lambda () (setq comment-start "//"
                                         comment-end   "")))
 
+
+;; Font lock modes for Latex output to highlight warnings
+(font-lock-add-keywords 'TeX-output-mode
+  '(("^.*[wW]arning.*$" . font-lock-warning-face)
+    ("^.*[mM]essage.*$" . font-lock-keyword-face)))
+
 (provide 'settings)
 
 ;;; settings.el ends here
