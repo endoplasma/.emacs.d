@@ -42,10 +42,15 @@
 
 ;; C-c C-r gets overwritten by ecb
 (global-set-key (kbd "C-c C-t") 'comment-or-uncomment-region-or-line)
+;; both get overwritten by matlab
+(global-set-key (kbd "C-c C-x t") 'comment-or-uncomment-region-or-line)
+
 
 (global-set-key (kbd "C-x C-k") 'kill-this-buffer)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "M-<f2>") 'nv-speedbar-open-current-buffer-in-tree)
 
 ;;; key-bindings.el ends here
-

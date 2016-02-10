@@ -43,7 +43,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; Font settings
-(set-face-attribute 'default nil :family "Anonymous Pro" :height 110)
+(set-face-attribute 'default nil :family "Anonymous Pro" :height 130)
 ;;(set-face-attribute 'default nil :family "Anonymous Pro" :height 100)
 ;;(set-face-attribute 'default nil :family "Inconsolata" :height 110)
 ;;(set-default-font "Inconsolata-11")

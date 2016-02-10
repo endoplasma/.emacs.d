@@ -55,17 +55,26 @@ region\) apply comment-or-uncomment to the current line"
 (defun my-set-monospaced-font ()
   "Set a monospaced font, for modes with programming languages"
   (interactive)
-  (setq buffer-face-mode-face '(:family "Inconsolata" :height 110))
+  (setq buffer-face-mode-face '(:family "Inconsolata" :height 130))
   (buffer-face-mode)
   )
 
 (defun my-set-normal-font ()
   "Set a non-monospaced font, for modes with normal text"
   (interactive)
-  (setq buffer-face-mode-face '(:family "Anonymous Pro" :height 110))
+  (setq buffer-face-mode-face '(:family "Anonymous Pro" :height 130))
   (buffer-face-mode)
   )
 
 (add-hook 'c-mode-hook 'my-set-monospaced-font)
+
+
+(defun update-org-latex-fragment-scale ()
+  (let ((text-scale-factor (expt text-scale-mode-step text-scale-mode-amount)))
+    (plist-put org-format-latex-options :scale (* 2.3 text-scale-factor)))
+  )
+
+(add-hook 'text-scale-mode-hook 'update-org-latex-fragment-scale)
+
 
 ;;; functions.el ends here
