@@ -107,4 +107,5 @@
       "\\begin{frame}[fragile]\\frametitle{%s}"
       "\\end{frame}")))
 
-
+;(require 'org-latex)
+;(setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))

@@ -25,6 +25,9 @@
        (lambda() (my-set-monospaced-font)))
 
 
+;;(plist-put org-format-latex-options :scale 1.5)
+
+
 ;; ##################### coding styles ######################
 
 

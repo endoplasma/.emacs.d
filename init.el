@@ -93,6 +93,7 @@
 ;	 projectile-speedbar
 	 doxymacs
 	 matlab-mode
+	 sr-speedbar
 	 )))
 
 ;; install new packages and init already installed packages
@@ -106,6 +107,11 @@
 (load "~/.emacs.d/functions.el")
 (load "~/.emacs.d/key-bindings.el")
 ;;(load "~/.emacs.d/cedet_ecb_config.el")
+
+
+(add-to-list 'load-path "~/Downloads/matlab-emacs/")
+(require 'matlab-load)
+
 
 
 ;; (ede-cpp-root-project "WICCAD"
