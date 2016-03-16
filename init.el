@@ -74,27 +74,37 @@
 (setq my-el-get-packages
       (append
        '(el-get
-	 auctex
-	 switch-window
 	 auto-complete
-	 color-theme-zenburn
 	 cedet
-	 smartparens
-	 org-mode
-	 vhdl-mode
-	 yasnippet
-	 projectile
+	 cmake-mode
+	 color-theme-zenburn
+	 flycheck	 
+	 ggtags
 	 helm
-	 flycheck
 	 magit
 	 markdown-mode
+<<<<<<< HEAD
 	 cmake-mode
 	 ggtags
 ;	 projectile-speedbar
 	 doxymacs
 	 matlab-mode
 	 sr-speedbar
+=======
+	 org-mode
+	 projectile
+	 smartparens
+	 switch-window
+	 vhdl-mode
+	 yasnippet
+>>>>>>> 26780ade75fe003c106c058ba4871e7d9f09fc36
 	 )))
+;	 auctex
+;	 projectile-speedbar
+;	 doxymacs
+;	 matlab-mode
+
+
 
 ;; install new packages and init already installed packages
 (el-get 'sync my-el-get-packages)
@@ -107,6 +117,17 @@
 (load "~/.emacs.d/functions.el")
 (load "~/.emacs.d/key-bindings.el")
 ;;(load "~/.emacs.d/cedet_ecb_config.el")
+
+;; Setting up matlab-mode
+(add-to-list 'load-path "~/.emacs.d/user-files/matlab-emacs")
+(load-library "matlab-load")
+(custom-set-variables
+ '(matlab-shell-command-switches '("-nodesktop -nosplash")))
+(add-hook 'matlab-mode-hook 'auto-complete-mode)
+(setq auto-mode-alist
+    (cons
+     '("\\.m$" . matlab-mode)
+     auto-mode-alist))
 
 
 (add-to-list 'load-path "~/Downloads/matlab-emacs/")
