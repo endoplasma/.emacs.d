@@ -74,7 +74,7 @@ region\) apply comment-or-uncomment to the current line"
     (plist-put org-format-latex-options :scale (* 2.3 text-scale-factor)))
   )
 
-(add-hook 'text-scale-mode-hook 'update-org-latex-fragment-scale)
+;; (add-hook 'text-scale-mode-hook 'update-org-latex-fragment-scale)
 
 
 ;;; functions.el ends here

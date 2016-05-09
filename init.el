@@ -75,9 +75,11 @@
       (append
        '(el-get
 	 auto-complete
+	 auctex
 	 cedet
 	 cmake-mode
 	 color-theme-zenburn
+	 ecb
 	 flycheck	 
 	 ggtags
 	 helm
@@ -113,7 +115,28 @@
 (add-to-list 'load-path "~/.emacs.d/user-files/matlab-emacs")
 (load-library "matlab-load")
 (custom-set-variables
- '(matlab-shell-command-switches '("-nodesktop -nosplash")))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(TeX-engine (quote luatex))
+ '(custom-safe-themes
+   (quote
+    ("471877df61bcd989ba4c0a5097654684fcfe918e124d46f811b533e44df34f53" default)))
+ '(ecb-eshell-auto-activate t)
+ '(ecb-eshell-buffer-sync nil)
+ '(ecb-options-version "2.40")
+ '(ecb-source-path nil)
+ '(matlab-shell-command-switches (quote ("-nodesktop -nosplash")))
+ '(safe-local-variable-values
+   (quote
+    ((TeX-command-extra-options . "-shell-escape")
+     (TeX-synctex-tex-flags . "-synctex=1 -shell-escape")
+     (TeX-source-correlate-mode . t)
+     (TeX-master . t)
+     (eval flyspell-buffer)
+     (eval ispell-change-dictionary "en_GB")
+     (require-final-newline)))))
 (add-hook 'matlab-mode-hook 'auto-complete-mode)
 (setq auto-mode-alist
     (cons
@@ -267,24 +290,7 @@
 
 
 ;;(load "~/.emacs.d/custom.el")
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(TeX-engine (quote luatex))
- '(custom-safe-themes
-   (quote
-    ("471877df61bcd989ba4c0a5097654684fcfe918e124d46f811b533e44df34f53" default)))
- '(ecb-eshell-auto-activate t)
- '(ecb-eshell-buffer-sync nil)
- '(ecb-options-version "2.40")
- '(ecb-source-path nil)
- '(safe-local-variable-values
-   (quote
-    ((eval flyspell-buffer)
-     (eval ispell-change-dictionary "en_GB")
-     (require-final-newline)))))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
