@@ -105,7 +105,16 @@
      ("\\begin{frame}[fragile]\\frametitle{%s}"
       "\\end{frame}"
       "\\begin{frame}[fragile]\\frametitle{%s}"
-      "\\end{frame}")))
+      "\\end{frame}"))
+)
+
+;###############################################################################
+;habit tracking
+(require 'org)
+(require 'org-install)
+(add-to-list 'org-modules "org-habit")
 
 ;(require 'org-latex)
 ;(setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
+
+

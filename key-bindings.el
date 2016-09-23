@@ -42,10 +42,7 @@
 
 ;; C-c C-r gets overwritten by ecb
 (global-set-key (kbd "C-c C-t") 'comment-or-uncomment-region-or-line)
-<<<<<<< HEAD
-=======
 ;; both get overwritten by matlab
->>>>>>> 26780ade75fe003c106c058ba4871e7d9f09fc36
 (global-set-key (kbd "C-c C-x t") 'comment-or-uncomment-region-or-line)
 
 

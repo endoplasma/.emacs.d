@@ -1,4 +1,4 @@
- ;; ########## AUCTEX ##################################################
+;; ########## AUCTEX ##################################################
 (setq TeX-auto-save t)
 ; parse the document to enable e.g. document specific environment insertion etc.
 (setq TeX-parse-self t)
@@ -23,9 +23,12 @@
 ;; ##############################
 (defun turn-on-outline-minor-mode ()
 (outline-minor-mode 1))
+
+(require 'outline)
 (add-hook 'LaTeX-mode-hook 'turn-on-outline-minor-mode)
 (add-hook 'latex-mode-hook 'turn-on-outline-minor-mode)
-(setq outline-minor-mode-prefix "\C-c \C-o") ; Or something else
+(setq outline-minor-mode-prefix "\C-c\C-o") ; Or something else
+(define-key outline-mode-prefix-map (kbd "C-t") 'outline-toggle-children)
 
 ;; Reftex einflechten und laden
 (setq reftex-plug-into-AUCTeX t)
@@ -33,3 +36,14 @@
 
 (setq LaTeX-csquotes-close-quote "}")
 (setq LaTeX-csquotes-open-quote "\\enquote{")
+
+(add-to-list 'auto-mode-alist '("\\.tikz\\'" . LaTeX-mode))
+
+; Turn on RefTeX for AUCTeX, http://www.gnu.org/s/auctex/manual/reftex/reftex_5.html
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+; Make RefTeX interact with AUCTeX, http://www.gnu.org/s/auctex/manual/reftex/AUCTeX_002dRefTeX-Interface.html
+(setq reftex-plug-into-AUCTeX t)
+
+(provide 'init-auctex.el)
+
+;;; init-auctex.el ends here

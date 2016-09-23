@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: newsymbol
+# key: ns
+# --
+\newglossaryentry{${1:AC}}{
+  name=$${2:Symbol text name}$,
+  symbol=$2,
+  description=${3:description}${4:,
+  sort=${5:$1}}
+}

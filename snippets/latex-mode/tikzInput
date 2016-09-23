@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: tikzInclude
+# key: ti
+# --
+\begin{figure}[ht]
+  \centering
+  \begin{adjustbox}{max width=\textwidth}
+    \inputtikz{${1:filename}}
+  \end{adjustbox}
+  \caption{\label{fig:$1} ${2:caption}}
+\end{figure}

@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: newglossaryentry
+# key: gl
+# --
+\newglossaryentry{${1:AC}}{
+  name=$${2:Andrea Crotti}$,
+  ${3:symbol=${4:$2},
+  }description=${5:description}
+}

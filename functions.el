@@ -68,6 +68,8 @@ region\) apply comment-or-uncomment to the current line"
 
 (add-hook 'c-mode-hook 'my-set-monospaced-font)
 
+; auto scale latex preview  by resizing text
+(require 'org)
 
 (defun update-org-latex-fragment-scale ()
   (let ((text-scale-factor (expt text-scale-mode-step text-scale-mode-amount)))

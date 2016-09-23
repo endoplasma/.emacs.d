@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: align
+# key: ali
+# --
+\begin{align}
+  \label{eq:${1}}
+  $0
+\end{align}
