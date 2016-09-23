@@ -44,6 +44,13 @@
 ; Make RefTeX interact with AUCTeX, http://www.gnu.org/s/auctex/manual/reftex/AUCTeX_002dRefTeX-Interface.html
 (setq reftex-plug-into-AUCTeX t)
 
+;; add makeglossaries to commadn options
+(eval-after-load "tex"
+  '(add-to-list 'TeX-command-list
+       '("Makeglossaries" "makeglossaries %s" TeX-run-command nil
+         (latex-mode)
+         :help "Run makeglossaries script, which will choose xindy or makeindex") t))
+
 (provide 'init-auctex.el)
 
 ;;; init-auctex.el ends here

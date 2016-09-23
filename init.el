@@ -75,6 +75,7 @@
       (append
        '(el-get
 	 auto-complete
+	 auctex
 	 cedet
 	 cmake-mode
 	 color-theme-zenburn
