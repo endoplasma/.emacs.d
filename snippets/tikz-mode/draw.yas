@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: draw
+# key: dr
+# --
+\draw [${1:$$(yas-choose-value '("dspline" "dspconn" "dspflow"))}] ($2) ${4:--} ($3);

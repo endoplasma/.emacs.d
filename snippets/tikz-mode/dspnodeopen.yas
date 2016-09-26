@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: dspopen
+# key: dspo
+# --
+\node[dspnodeopen, dsp/label=${3:left}${4:, ${5:$$(yas-choose-value '("right" "left" "below" "above" "above right" "above left" "below right" "below left"))} = ${6:1cm} of $7}  ] (${1:name}) {${2:caption}};

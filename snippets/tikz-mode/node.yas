@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: node
+# key: no
+# --
+\node[${1:$$(yas-choose-value '("dspnodeopen" "dspnodefull" "dspadder" "dspmixer" "absblock"))}${2:, dsp/label=${3:left}}${4:, ${5:$$(yas-choose-value '("right" "left" "below" "above" "above right" "above left" "below right" "below left"))} = ${6:1cm} $10 of $7}  ] (${8:name}) {${9:caption}};
+$0
